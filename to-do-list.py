@@ -8,6 +8,10 @@ tarefas = []
 def listar():
     return {"tarefas": tarefas}
 
+@app.route("/")
+def home():
+    return {"mensagem": "API funcionando!"}
+
 @app.route("/tarefas", methods=["POST"])
 def adicionar():
     dados = request.json
